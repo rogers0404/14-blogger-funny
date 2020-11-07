@@ -1,0 +1,31 @@
+<div class="col mb-10" >
+            <div class="card" >
+                <div class="card-body bg-warning">
+                    <h5 class="card-title text-danger">{{key}}</h5>
+                </div>
+                <ul class="list-group list-group-flush text text-light">
+                    <li class="list-group-item bg-secondary">
+                        <form class="login-form">
+                            <div>
+                                <label for="user">User Name:</label>
+                                <input type="text" id="user" />
+                            </div>
+                            <div>
+                                <label for="password">password:</label>
+                                <input type="password" id="password" />
+                            </div>
+                            <div>
+                                <button type="submit">{{key}}</button>
+                            </div>
+                    </form>
+                    </li>
+                    <li class="list-group-item bg-secondary"></li>
+                        {{#if action}}                        
+                            <a href="/signup">Instead Sign up</a> 
+                        {{else}}
+                            <a href="/login">Instead Login</a>
+                        {{/if}}
+                    </li>
+                </ul>
+            </div>
+        </div>

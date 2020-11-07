@@ -1,0 +1,10 @@
+<main class="container my-5">
+      <div class="row row-cols-1 row-cols-md-3 row-cols-sm-1 justify-content-center">
+        {{!-- Displaying the Post in Cards --}}
+
+        {{#each posts as |post|}}
+             <a href="/post/{{id}}">{{> post-cards post }}</a>
+        {{/each}}
+
+      </div>
+</main>
