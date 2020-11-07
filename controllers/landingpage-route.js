@@ -42,7 +42,7 @@ router.get('/', (req, res) => {
       return;
     }
   
-    res.render('login', {key: 'Login', action: true});
+    res.render('login', {key: 'Login', action: true, text:'login'});
   });
 
   router.get('/signup', (req, res) => {
@@ -51,7 +51,7 @@ router.get('/', (req, res) => {
       return;
     }
   
-    res.render('signup', {key: 'Sign Up', action: false});
+    res.render('signup', {key: 'Sign Up', action: false, text:'signup'});
   });
 
   router.get('/post/:id', (req, res) => {
