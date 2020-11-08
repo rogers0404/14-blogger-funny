@@ -37,7 +37,7 @@ async function updatePost(event) {
   
     if (id) {
       const response = await fetch('/api/posts/'+id, {
-        method: 'delete',
+        method: 'DELETE',
         headers: { 'Content-Type': 'application/json' }
       });
   
