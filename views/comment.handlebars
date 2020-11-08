@@ -1,0 +1,50 @@
+
+{{!-- Welcome to the user Dashboard in session  --}}
+
+<main class="container my-5">
+      <div class="row row-cols-1 row-cols-md-1 row-cols-sm-1 justify-content-center">
+        
+        {{#each posts as |post|}}
+            {{> post-cards post }} {{!--  --}}
+        {{/each}}
+
+      </div>
+
+      {{!-- existing comments --}}
+    {{#each post.comments as |comment|}}
+      {{>comment-post comment}}
+    {{/each}}
+
+      {{!-- form comment --}}
+      <div class="row row-cols-1 row-cols-md-1 row-cols-sm-1 justify-content-center">
+        
+        <div class="col mb-4" >
+            <div class="card" >
+                <div class="card-body bg-warning">
+                    <h5 class="card-title text-danger">Comment</h5>
+                </div>
+                
+                <form class="newPost-form">
+                <ul class="list-group list-group-flush text text-light">
+                        <li class="list-group-item bg-secondary">
+                             <div>
+                                <textarea class="w-100" name="" id="comment" cols="30" rows="3"></textarea>
+                            </div>
+                        </li>                   
+                        <li class="list-group-item bg-secondary">
+                            <div>
+                                <button type="submit" attr1="{{post.id}}" attr2="{{post.user_id}}" id="update">Submit</button>
+                            </div>
+                        </li> 
+                    </ul>        
+                    </form>
+                
+            </div>
+        </div>
+
+      </div>
+
+
+</main>
+   {{!--  <script src="/assets/js/locate.js"></script> --}}
+

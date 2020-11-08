@@ -1,0 +1,18 @@
+<div class="row row-cols-1 row-cols-md-1 row-cols-sm-1 justify-content-center">
+      <div class="col mb-4" >
+        <div class="card" >
+            <div class="card-body bg-warning">
+                <h5 class="card-title text-danger">Comments</h5>                
+            </div>                        
+            <ul class="list-group list-group-flush text text-light">
+                <li class="list-group-item bg-secondary">
+                  {{comment_text}}
+                </li>
+                <li class="list-group-item bg-secondary small-text">
+                  >> {{user.username}}, on {{created_at}}
+                </li>
+
+            </ul>
+        </div>
+      </div>
+  </div>
