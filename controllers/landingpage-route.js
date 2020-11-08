@@ -91,7 +91,7 @@ router.get('/', (req, res) => {
         const post = dbPostData.get({ plain: true });
   
         // pass data to template
-        res.render('user-post', {
+        res.render('editPost', {
             post,
             loggedIn: req.session.loggedIn
           });

@@ -5,7 +5,7 @@
         <div class="col mb-4" >
             <div class="card" >
                 <div class="card-body bg-warning">
-                    <h5 class="card-title text-danger">New Post</h5>
+                    <h5 class="card-title text-danger">Edit Post</h5>
                 </div>
                 
                 <form class="newPost-form">
@@ -14,18 +14,21 @@
                         <li class="list-group-item bg-secondary">
                             <div>
                                 <label for="user">Title</label>
-                                <input type="text" id="title" />
+                                <input type="text" id="title" attr="{{post.user_id}}" value="{{post.title}}"/>
                             </div>
                         </li>     
                         <li class="list-group-item bg-secondary">
                              <div>
-                                <label for="content">Content:</label>
-                                <input type="textarea" id="content" />
+                                <label >Content</label>
+                                <textarea name="" id="content" cols="30" rows="3">{{post.content}}</textarea>
                             </div>
                         </li>                   
                         <li class="list-group-item bg-secondary">
                             <div>
-                                <button type="submit">Creatr New Post</button>
+                                <button type="submit" attr="{{post.id}}" id="update">Update Post</button>
+                            </div>
+                            <div>
+                                <button type="submit" attr="{{post.id}}" id="delete">Delete Post</button>
                             </div>
                         </li> 
                     </ul>        
@@ -36,3 +39,4 @@
 
       </div>
 </main>
+    <script src="/assets/js/editPost.js"></script>
