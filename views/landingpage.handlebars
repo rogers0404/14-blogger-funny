@@ -5,11 +5,11 @@
         {{!-- Displaying the Post in Cards --}}
       {{#if loggedIn}}
         {{#each posts as |post|}}            
-              <a href="/single-post/{{id}}">{{> post-cards post }}</a>
+              <a class="text-decoration-none" href="/single-post/{{id}}">{{> post-cards post }}</a>
         {{/each}}
       {{else}}
           {{#each posts as |post|}}  
-              <a href="#">{{> post-cards post }}</a>
+              <a class="text-decoration-none" href="#">{{> post-cards post }}</a>
           {{/each}}
       {{/if}}
 

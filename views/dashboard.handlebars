@@ -1,11 +1,19 @@
 
 {{!-- Welcome to the user Dashboard in session  --}}
+<div class="container my-5">
+  <div class="row row-cols-1 row-cols-md-1 row-cols-sm-1 justify-content-center">
+    <div class="col-2 mb-4 bg-warning text-danger">
+      <h3>Your Dashboard</h3>
+      <h5 class="small-text">User: {{username}}</h3>
+    </div>
+  </div>
+</div>
 
 <main class="container my-5">
       <div class="row row-cols-1 row-cols-md-1 row-cols-sm-1 justify-content-center">
         
         {{#each posts as |post|}}
-             <a href="/post/{{id}}">{{> post-cards post }}</a> {{!-- update the link to make update and delete --}}
+             <a class="text-decoration-none" href="/post/{{id}}">{{> post-cards post }}</a> {{!-- update the link to make update and delete --}}
         {{/each}}
 
       </div>

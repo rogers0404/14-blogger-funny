@@ -9,26 +9,35 @@
                 </div>
                 
                 <form class="newPost-form">
-                <ul class="list-group list-group-flush text text-light"></ul>
-                            
-                        <li class="list-group-item bg-secondary">
+                <ul class="list-group list-group-flush text text-light">
+                    <li class="list-group-item bg-secondary">                       
                             <div>
                                 <label for="user">Title</label>
-                                <input type="text" id="title" attr="{{post.user_id}}" value="{{post.title}}"/>
                             </div>
-                        </li>     
-                        <li class="list-group-item bg-secondary">
-                             <div>
+                        </li>
+                        <li class="list-group-item bg-secondary">                       
+                            <div>
+                                <input class="w-100" type="text" id="title" attr="{{post.user_id}}" value="{{post.title}}"/>
+                            </div>
+                        </li>
+                        <li class="list-group-item bg-secondary">                       
+                            <div>
                                 <label >Content</label>
-                                <textarea name="" id="content" cols="30" rows="3">{{post.content}}</textarea>
                             </div>
-                        </li>                   
+                        </li>
+                        <li class="list-group-item bg-secondary">                       
+                            <div>
+                                <textarea class="w-100" name="" id="content" cols="30" rows="3">{{post.content}}</textarea>
+                            </div>
+                        </li>
+                        <li class="list-group-item bg-secondary">                       
+                            <div>
+                                <button class="btn btn-warning" type="submit" attr="{{post.id}}" id="update">Update Post</button>
+                            </div>
+                        </li>
                         <li class="list-group-item bg-secondary">
                             <div>
-                                <button type="submit" attr="{{post.id}}" id="update">Update Post</button>
-                            </div>
-                            <div>
-                                <button type="submit" attr="{{post.id}}" id="delete">Delete Post</button>
+                                <button class="btn btn-warning" type="submit" attr="{{post.id}}" id="delete">Delete Post</button>
                             </div>
                         </li> 
                     </ul>        

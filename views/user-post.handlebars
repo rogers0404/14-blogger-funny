@@ -6,22 +6,34 @@
                 <div class="card-body bg-warning">
                     <h5 class="card-title text-danger">New Post</h5>
                 </div>
-                <ul class="list-group list-group-flush text text-light">
-                    <li class="list-group-item bg-secondary">
-                        <form class="post-form">
+                <ul class="list-group list-group-flush text text-light"> 
+                    <form class="post-form">
+                        <li class="list-group-item bg-secondary">                       
                             <div>
                                 <label for="user">Title</label>
-                                <input type="text" id="title" />
                             </div>
+                        </li>
+                        <li class="list-group-item bg-secondary">                       
+                            <div>
+                                <input class="w-100" type="text" id="title" />
+                            </div>
+                        </li>
+                        <li class="list-group-item bg-secondary">                       
                             <div>
                                 <label >Content</label>
-                                <textarea name="" id="content" cols="30" rows="3"></textarea>
                             </div>
+                        </li>
+                        <li class="list-group-item bg-secondary">                       
                             <div>
-                                <button type="submit" attr="{{user_id}}" id="newPost">Create Post</button>
+                                <textarea class="w-100" name="" id="content" cols="30" rows="3"></textarea>
                             </div>
+                        </li>
+                        <li class="list-group-item bg-secondary">                       
+                            <div>
+                                <button class="btn btn-warning" type="submit" attr="{{user_id}}" id="newPost">Create Post</button>
+                            </div>
+                        </li>
                     </form>
-                    </li>
                 </ul>
             </div>
         </div>

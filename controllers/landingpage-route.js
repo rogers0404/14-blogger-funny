@@ -41,6 +41,7 @@ router.get('/', (req, res) => {
             posts,
             loggedIn: req.session.loggedIn,
             user_id: req.session.user_id,
+            username: req.session.username
           });
       })
       .catch(err => {
@@ -99,7 +100,8 @@ router.get('/', (req, res) => {
         // pass data to template
         res.render('editPost', {
             post,
-            loggedIn: req.session.loggedIn
+            loggedIn: req.session.loggedIn,
+            user_id: req.session.user_id
           });
       })
       .catch(err => {
@@ -180,7 +182,8 @@ router.get('/', (req, res) => {
          res.render('dashboard', {
             posts,
             loggedIn: req.session.loggedIn,
-            user_id: req.session.user_id
+            user_id: req.session.user_id,
+            username:req.session.username
           }); 
         
       })

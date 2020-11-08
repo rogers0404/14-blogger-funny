@@ -6,34 +6,34 @@
     <title>Blogger Funny</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
       <link href="https://fonts.googleapis.com/css?family=Public+Sans:300i,300,500&display=swap" rel="stylesheet">
-      {{!-- <link rel="stylesheet" href="style.css"> --}}
+      <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
 
     {{!-- the nav-bar from bootstrap --}}
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning text-danger">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a class="navbar-brand" href="#">Blogger Funny</a>
+            <a class="navbar-brand text-danger" href="#">Blogger Funny</a>
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link text-danger" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 {{#if loggedIn}}
-                    <a class="nav-link" id="dashboard" attr="{{user_id}}" href="/dashboard/{{user_id}}">Dashborad</a>
+                    <a class="text-decoration-none nav-link text-danger" id="dashboard" attr="{{user_id}}" href="/dashboard/{{user_id}}">Dashborad</a>
                 {{else}}
-                    <a class="nav-link" href="#">Dashborad</a>
+                    <a class="text-decoration-none nav-link text-danger" href="#">Dashborad</a>
                 {{/if}}
             </li>
             <li class="nav-item">
                  {{#if loggedIn}}                        
-                    <button type="button" id="logout" class="btn btn-link">Logout</button>
+                    <button type="button" id="logout" class="btn btn-link text-danger">Logout</button>
                 {{else}}
-                    <a class="nav-link" href="/login">Login</a>
+                    <a class="nav-link text-danger" href="/login">Login</a>
                 {{/if}}
             </li>
             </ul>
@@ -53,6 +53,18 @@
         <script src="/assets/js/logout.js"></script>
         <script src="/assets/js/dashboard.js"></script>
     {{/if}}
+
+
+<footer class="footer">
+        <div class="container bg-warning p-1 m-0 mw-100">
+            <h5 class="text-left text-danger w-100 ">
+                &copy; 2020 by 
+                <span>
+                    <a class="text-decoration-none" href="https://github.com/rogers0404/" target="_blank"> GitHub: Rogers0404</a>
+                </span>
+            </h5>
+        </div>
+      </footer>
     
 </body>
 </html>

@@ -4,28 +4,40 @@
                     <h5 class="card-title text-danger">{{key}}</h5>
                 </div>
                 <ul class="list-group list-group-flush text text-light">
-                    <li class="list-group-item bg-secondary">
-                        <form class="{{text}}-form">
+                    <form class="{{text}}-form">
+                        <li class="list-group-item bg-secondary">                       
                             <div>
                                 <label for="user">User Name:</label>
-                                <input type="text" id="{{text}}-user" />
                             </div>
+                        </li>
+                        <li class="list-group-item bg-secondary">
+                            <div>
+                                <input class="w-100" type="text" id="{{text}}-user" />
+                            </div>
+                        </li>
+                        <li class="list-group-item bg-secondary">
                             <div>
                                 <label for="password">password:</label>
-                                <input type="password" id="{{text}}-password" />
                             </div>
+                        </li>
+                        <li class="list-group-item bg-secondary">
                             <div>
-                                <button type="submit">{{key}}</button>
+                                <input  class="w-100" type="password" id="{{text}}-password" />
                             </div>
+                        </li>
+                        <li class="list-group-item bg-secondary">
+                            <div>
+                                <button class="btn btn-warning" type="submit">{{key}}</button>
+                            </div>
+                        </li>
+                        <li class="list-group-item bg-secondary"></li>
+                            {{#if action}}                        
+                                <a class="text-decoration-none" href="/signup">Instead Sign up</a> 
+                            {{else}}
+                                <a class="text-decoration-none" href="/login">Instead Login</a>
+                            {{/if}}
+                        </li>                            
                     </form>
-                    </li>
-                    <li class="list-group-item bg-secondary"></li>
-                        {{#if action}}                        
-                            <a href="/signup">Instead Sign up</a> 
-                        {{else}}
-                            <a href="/login">Instead Login</a>
-                        {{/if}}
-                    </li>
                 </ul>
             </div>
         </div>
