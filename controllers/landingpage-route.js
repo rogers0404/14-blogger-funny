@@ -4,7 +4,13 @@ const { Post, User, Comment } = require('../models');
 
 
 router.get('/', (req, res) => {
-    //console.log(req.session);
+
+  //checking whether the session is created or not
+  if (!req.session.loggedIn) {
+    req.session.loggedIn = false;
+  }
+
+    
     Post.findAll({
       include: [
         {
@@ -27,7 +33,8 @@ router.get('/', (req, res) => {
         const posts = dbPostData.map(post => post.get({ plain: true }));
         res.render('landingpage', {
             posts,
-            loggedIn: req.session.loggedIn
+            loggedIn: req.session.loggedIn,
+            user_id: req.session.user_id,
           });
       })
       .catch(err => {
@@ -94,6 +101,46 @@ router.get('/', (req, res) => {
         res.status(500).json(err);
       });
   });
+
+  //crerated a route for dashbord
+  router.get('/dashboard/:userId', (req, res) => {
+    Post.findAll({
+      where: {
+        user_id: req.params.userId
+      },
+      order: [['created_at', 'DESC']],
+      include: [
+      // include the Comment model here:
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
+    })
+      .then(dbPostData => {
+        if (!dbPostData) {
+          res.status(404).json({ message: 'No post found with this id' });
+          return;
+        }
+       
+        const posts = dbPostData.map(post => post.get({ plain: true }));
+        //const post = res.json(dbPostData);
+ 
+        //res.json(dbPostData);
+        // pass data to template
+         res.render('dashboard', {
+            posts,
+            loggedIn: req.session.loggedIn,
+            user_id: req.session.user_id
+          }); 
+        
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
+
 
 
   module.exports = router;

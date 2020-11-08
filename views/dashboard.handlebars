@@ -1,0 +1,22 @@
+
+{{!-- Welcome to the user Dashboard in session  --}}
+
+<main class="container my-5">
+      <div class="row row-cols-1 row-cols-md-1 row-cols-sm-1 justify-content-center">
+        
+        {{#each posts as |post|}}
+             <a href="/post/{{user_id}}">{{> post-cards post }}</a> {{!-- update the link to make update and delete --}}
+        {{/each}}
+
+      </div>
+</main>
+
+<div class="container my-5">
+  <div class="row row-cols-1 row-cols-md-1 row-cols-sm-1 justify-content-center">
+    <div class="col-2 justify-content-center">
+        <button id="newPost" attr="{{user_id}}" type="button" class="btn btn-warning ">+ Post</button>
+    </div>
+  </div>
+</div>
+
+

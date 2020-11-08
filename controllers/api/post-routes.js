@@ -64,6 +64,8 @@ router.get('/', (req, res) => {
       });
   });
 
+  
+
   router.post('/', (req, res) => {
     // expects {title: 'Taskmaster goes public!', content: 'something to add', user_id: 2}
     Post.create({
