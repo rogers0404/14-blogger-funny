@@ -3,10 +3,8 @@
 
 <main class="container my-5">
       <div class="row row-cols-1 row-cols-md-1 row-cols-sm-1 justify-content-center">
-        
-        {{#each posts as |post|}}
-            {{> post-cards post }} {{!--  --}}
-        {{/each}}
+
+            {{> post-cards post }}
 
       </div>
 
@@ -24,7 +22,7 @@
                     <h5 class="card-title text-danger">Comment</h5>
                 </div>
                 
-                <form class="newPost-form">
+                <form class="comment-form">
                 <ul class="list-group list-group-flush text text-light">
                         <li class="list-group-item bg-secondary">
                              <div>
@@ -33,7 +31,7 @@
                         </li>                   
                         <li class="list-group-item bg-secondary">
                             <div>
-                                <button type="submit" attr1="{{post.id}}" attr2="{{post.user_id}}" id="update">Submit</button>
+                                <button type="submit" postId="{{post.id}}" userId="{{post.user_id}}" id="saveComment">Submit</button>
                             </div>
                         </li> 
                     </ul>        
@@ -46,5 +44,5 @@
 
 
 </main>
-   {{!--  <script src="/assets/js/locate.js"></script> --}}
+    <script src="/assets/js/saveComment.js"></script>
 

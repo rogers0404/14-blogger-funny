@@ -16,9 +16,12 @@ app.set('view engine', 'handlebars');
 
 const sess = {
   secret: 'secret',
-  cookie: {},
+  cookie: {
+    maxAge: 30000   // 1/2 minute of maxAge 
+  },
   resave: false,
   saveUninitialized: false,
+  rolling: true,     //key in true for inactivity and reset the maxAge when the server find a request in the time less than maxAge however the session is closed
   store: new SequelizeStore({
     db: sequelize
   })
