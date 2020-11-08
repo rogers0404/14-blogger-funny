@@ -1,6 +1,6 @@
 async function loadPostHandler() {
     const userId = document.querySelector("#dashboard").getAttribute("attr");
-    alert(userId)
+    //alert(userId)
 
     const response = await fetch('/dashboard/'+userId, {
       method: 'get',

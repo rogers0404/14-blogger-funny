@@ -141,6 +141,44 @@ router.get('/', (req, res) => {
       });
   });
 
+  router.get('/newPost/:userId', (req, res) => {
+    Post.findAll({
+      where: {
+        user_id: req.params.userId
+      },
+      order: [['created_at', 'DESC']],
+      include: [
+      // include the Comment model here:
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
+    })
+      .then(dbPostData => {
+        if (!dbPostData) {
+          res.status(404).json({ message: 'No post found with this id' });
+          return;
+        }
+       
+        const posts = dbPostData.map(post => post.get({ plain: true }));
+        //const post = res.json(dbPostData);
+ 
+        //res.json(dbPostData);
+        // pass data to template
+         res.render('user-post', {
+            posts,
+            loggedIn: req.session.loggedIn,
+            user_id: req.session.user_id
+          }); 
+        
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
+
 
 
   module.exports = router;
