@@ -7,7 +7,6 @@ router.get('/', (req, res) => {
   Post.findAll({
     order: [['created_at', 'DESC']],
     include: [
-      // include the Comment model here:
       {
         model: Comment,
         attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
@@ -36,7 +35,6 @@ router.get('/', (req, res) => {
       },
       order: [['created_at', 'DESC']],
       include: [
-      // include the Comment model here:
       {
         model: Comment,
         attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
@@ -67,11 +65,11 @@ router.get('/', (req, res) => {
   
 
   router.post('/', (req, res) => {
-    // expects {title: 'Taskmaster goes public!', content: 'something to add', user_id: 2}
+
     Post.create({
       title: req.body.title,
       content: req.body.content,
-      user_id: req.body.user_id         //validate whether use to session or just a value
+      user_id: req.body.user_id         
     })
       .then(dbPostData => res.json(dbPostData))
       .catch(err => {
@@ -85,7 +83,7 @@ router.get('/', (req, res) => {
       {
         title: req.body.title,
         content: req.body.content,
-        user_id: req.body.user_id         //validate whether use to session or just a value
+        user_id: req.body.user_id         
       },
       {
         where: {

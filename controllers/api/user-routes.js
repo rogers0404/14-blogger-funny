@@ -121,9 +121,7 @@ router.post('/', (req, res) => {
 
 // PUT /api/users/1
 router.put('/:id', (req, res) => {
-    // expects {username: 'Lernantino', password: 'password1234'}
   
-    // if req.body has exact key/value pairs to match the model, you can just use `req.body` instead
     User.update(req.body, {
         individualHooks: true,
         where: {
@@ -143,7 +141,6 @@ router.put('/:id', (req, res) => {
       });
   });
 
-// DELETE /api/users/1
 router.delete('/:id', (req, res) => {
     User.destroy({
       where: {

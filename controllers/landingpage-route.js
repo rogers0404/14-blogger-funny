@@ -34,8 +34,6 @@ router.get('/', (req, res) => {
       ]
     })
       .then(dbPostData => {
-        // pass a single post object into the homepage template
-        //console.log(dbPostData[0]);
         const posts = dbPostData.map(post => post.get({ plain: true }));
         res.render('landingpage', {
             posts,
@@ -161,7 +159,6 @@ router.get('/', (req, res) => {
       },
       order: [['created_at', 'DESC']],
       include: [
-      // include the Comment model here:
       {
         model: User,
         attributes: ['username']
@@ -175,10 +172,7 @@ router.get('/', (req, res) => {
         }
        
         const posts = dbPostData.map(post => post.get({ plain: true }));
-        //const post = res.json(dbPostData);
- 
-        //res.json(dbPostData);
-        // pass data to template
+
          res.render('dashboard', {
             posts,
             loggedIn: req.session.loggedIn,
@@ -200,7 +194,6 @@ router.get('/', (req, res) => {
       },
       order: [['created_at', 'DESC']],
       include: [
-      // include the Comment model here:
       {
         model: User,
         attributes: ['username']
@@ -214,10 +207,6 @@ router.get('/', (req, res) => {
         }
        
         const posts = dbPostData.map(post => post.get({ plain: true }));
-        //const post = res.json(dbPostData);
- 
-        //res.json(dbPostData);
-        // pass data to template
          res.render('user-post', {
             posts,
             loggedIn: req.session.loggedIn,

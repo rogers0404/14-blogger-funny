@@ -21,7 +21,7 @@ const sess = {
   },
   resave: false,
   saveUninitialized: false,
-  rolling: true,     //key in true for inactivity and reset the maxAge when the server find a request in the time less than maxAge however the session is closed
+  rolling: true,     
   store: new SequelizeStore({
     db: sequelize
   })
